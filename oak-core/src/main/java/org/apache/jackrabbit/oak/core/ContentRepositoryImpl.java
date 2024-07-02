@@ -194,6 +194,7 @@ public class ContentRepositoryImpl implements ContentRepository, Closeable {
         final Value trueValue = valueFactory.createValue(true);
         final Value falseValue = valueFactory.createValue(false);
 
+        // comment
         GenericDescriptors gd = new GenericDescriptors(baseDescriptors)
                 .put(IDENTIFIER_STABILITY, valueFactory.createValue(Repository.IDENTIFIER_STABILITY_METHOD_DURATION), true, true)
                 .put(LEVEL_1_SUPPORTED, trueValue, true, true)
