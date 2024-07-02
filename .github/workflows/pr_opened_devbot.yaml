@@ -1,0 +1,14 @@
+name: PR Opened
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  send_url:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send PR URL to endpoint
+        run: |
+          PR_URL="https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }}"
+          curl -X POST -H "Content-Type: application/json" -d "{ \"url\": \"$PR_URL\" }" http://localhost:8080
